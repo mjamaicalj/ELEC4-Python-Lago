@@ -4,6 +4,7 @@
 
 import student_utils
 from student_utils import get_highest_grade, get_lowest_grade
+from datetime import datetime
 
 
 
@@ -36,20 +37,26 @@ def enter_grades():
 
     return grades
 
-if __name__ == "__main__":
-    student_grades = enter_grades()
-
-    average = student_utils.calculate_average(student_grades)
+def display_report(grades):
+    average = student_utils.calculate_average(grades)
     status = student_utils.check_pass_fail(average)
-    highest = get_highest_grade(student_grades)
-    lowest = get_lowest_grade(student_grades)
+    highest = get_highest_grade(grades)
+    lowest = get_lowest_grade(grades)
+
+    date_generated = datetime.now().strftime("%B %d, %Y - %I:%M:%S %p")
 
     print("\n================================")
     print("       STUDENT GRADE REPORT          ")
     print("================================")
-    print(f"Provided Grades: {student_grades}")
+    print(f"Provided Grades: {grades}")
     print(f"Average Grade  : {average:.2f}")
     print(f"Grade Status   : {status}")
     print(f"Highest Grade  : {highest:.2f}")
     print(f"Lowest Grade   : {lowest:.2f}")
+    print(f"Report Generated: {date_generated}")
     print("================================")
+
+
+if __name__ == "__main__":
+    student_grades = enter_grades()
+    display_report(student_grades)

@@ -11,6 +11,7 @@ def show_menu():
     print("=============================")
 
 
+# Function to divide two numbers safely
 def divide_numbers():
     try:
         num1 = float(input("Enter first number: "))
@@ -26,6 +27,7 @@ def divide_numbers():
         print("Error: Cannot divide by zero.")
 
 
+# Function to open and read a file safely
 def open_file():
     filename = input("Enter file name: ").strip()
 
@@ -40,24 +42,36 @@ def open_file():
     except FileNotFoundError:
         print("Error: The specified file was not found.")
 
+
+
+# Main function for the menu-driven program
+
 def main():
     while True:
         show_menu()
-        choice = input("Enter your choice (1-3): ")
 
-        if choice == "1":
-            divide_numbers()
+        try:
+            choice = input("Enter your choice (1-3): ").strip()
 
-        elif choice == "2":
-            open_file()
-            
-        elif choice == "3":
-            print("Thank you!!")
+            if choice == "1":
+                divide_numbers()
+
+            elif choice == "2":
+                open_file()
+
+            elif choice == "3":
+                print("Thank you for using the program!")
+                break
+
+            else:
+                print("Invalid menu choice. Please choose 1, 2, or 3.")
+
+        except (EOFError, KeyboardInterrupt):
+            print("\nInput interrupted. Exiting safely.")
             break
-
-        else:
-            print("Invalid menu choice. Please try again.")
 
 
 if __name__ == "__main__":
     main()
+
+       

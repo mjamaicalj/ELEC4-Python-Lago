@@ -27,6 +27,35 @@ def add_student():
         print(f"Student '{name}'successfully added!")
 
 
+
+# Function to search for a student
+def search_student():
+    search = " ".join(input("Enter student name to search: ").split()).casefold()
+
+    if not search:
+        print("Please enter a student name to search.")
+        return
+
+    matches = []
+
+    for name in students:
+        if search in name.casefold():
+            matches.append(name)
+
+    print("\n===== SEARCH RESULTS =====")
+
+    if len(matches) == 0:
+        print("No matching students found.")
+    else:
+        sorted_matches = sorted(matches, key=str.casefold)
+
+        for number, name in enumerate(sorted_matches, start=1):
+            print(f"{number}. {name}")
+
+    print(f"Total Matches: {len(matches)}")
+
+
+
 # Function to display all students
 def display_students():
     print("\n===== STUDENT PROFILES=====")
@@ -42,23 +71,28 @@ def display_students():
     print(f"Total Students: {len(students)}")
 
 
-# Main menu function
+
+#Implement Partial Student Name Search
 def main():
     while True:
         print("\n===== STUDENT RECORD MANAGER =====")
         print("1. Add Student")
-        print("2. Display All Students")
-        print("3. Exit")
+        print("2. Search Student")
+        print("3. Display All Students")
+        print("4. Exit")
 
-        choice = input("Enter your number choice (1-3): ")
+        choice = input("Enter your number choice (1-4): ")
 
         if choice == "1":
             add_student()
 
         elif choice == "2":
-            display_students()
+            search_student()
 
         elif choice == "3":
+            display_students()
+
+        elif choice == "4":
             print("Thank you for using Student Record Manager!")
             break
 
@@ -68,3 +102,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

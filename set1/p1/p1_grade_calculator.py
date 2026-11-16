@@ -57,11 +57,44 @@ def check_status(grades):
         return "FAIL"
 
 
-student_grades = enter_grades()
+def display_results(grades):
+    if not grades:
+        print("\nNo grades entered yet.")
+        return
 
-print("\n--- STUDENT GRADE PREVIEW---")
-print(f"Overall Grade: {calculate_average(student_grades):.2f}")
-print(f"Top Grade: {highest_grade(student_grades):.2f}")
-print(f"Lowest Grade: {lowest_grade(student_grades):.2f}")
-print(f"Grade Status: {check_status(student_grades)}")
+    print("\n===== GRADE EVALUATION =====")
+    print(f"Overall Grade: {calculate_average(grades):.2f}")
+    print(f"Top Grade: {highest_grade(grades):.2f}")
+    print(f"Lowest Grade: {lowest_grade(grades):.2f}")
+    print(f"Grade Status: {check_status(grades)}")
 
+
+def main():
+    grades = []
+
+    while True:
+        print("\n===== STUDENT GRADE CALCULATOR =====")
+        print("1. Enter Grades")
+        print("2. View Results")
+        print("3. Exit")
+
+        choice = input("Select an option (1-3): ")
+
+        if choice == "1":
+            grades = enter_grades()
+            print("\nGrades recorded successfully.")
+
+        elif choice == "2":
+            display_results(grades)
+
+        elif choice == "3":
+            print("\nProgram closed.")
+            break
+
+       
+        else:
+            print("\nInvalid option. Choose 1, 2, or 3.")
+
+
+if __name__ == "__main__":
+    main()

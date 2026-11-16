@@ -26,6 +26,20 @@ def divide_numbers():
         print("Error: Cannot divide by zero.")
 
 
+def open_file():
+    filename = input("Enter file name: ").strip()
+
+    try:
+        with open(filename, "r", encoding="utf-8") as file:
+            content = file.read()
+
+            print("\n===== FILE CONTENT =====")
+            print(content)
+            print("========================")
+
+    except FileNotFoundError:
+        print("Error: The specified file was not found.")
+
 def main():
     while True:
         show_menu()
@@ -35,8 +49,8 @@ def main():
             divide_numbers()
 
         elif choice == "2":
-            print("File opening feature coming soon.")
-
+            open_file()
+            
         elif choice == "3":
             print("Thank you!!")
             break

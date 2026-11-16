@@ -1,7 +1,8 @@
 
-# P4: Safe Menu Program
-# Topics: Exception Handling
-
+# Activity: P4 - Safe Menu Program
+# Student: Ma. Jamaica LJ J. Lago
+# Section: IV-BSIT A
+# Date: November 16, 2026
 
 def show_menu():
     print("\n===== SAFE MENU PROGRAM =====")
@@ -18,13 +19,18 @@ def divide_numbers():
         num2 = float(input("Enter second number: "))
 
         result = num1 / num2
-        print(f"Result: {result}")
 
     except ValueError:
         print("Error: Please enter valid numbers only.")
 
     except ZeroDivisionError:
         print("Error: Cannot divide by zero.")
+
+    else:
+        print(f"Result: {result}")
+
+    finally:
+        print("Division operation completed.")
 
 
 # Function to open and read a file safely
@@ -35,17 +41,19 @@ def open_file():
         with open(filename, "r", encoding="utf-8") as file:
             content = file.read()
 
-            print("\n===== FILE CONTENT =====")
-            print(content)
-            print("========================")
-
     except FileNotFoundError:
         print("Error: The specified file was not found.")
 
+    else:
+        print("\n===== FILE CONTENT =====")
+        print(content)
+        print("========================")
+
+    finally:
+        print("File operation completed.")
 
 
 # Main function for the menu-driven program
-
 def main():
     while True:
         show_menu()
@@ -73,5 +81,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-       

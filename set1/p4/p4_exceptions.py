@@ -30,7 +30,7 @@ def divide_numbers():
         print(f"Result: {result}")
 
     finally:
-        print("Division operation completed.")
+        print("Division attempt finished.")
 
 
 # Function to open and read a file safely

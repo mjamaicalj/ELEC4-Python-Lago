@@ -24,7 +24,29 @@ def add_student():
     else:
         students.append(name)
         student_names.add(name_key)
-        print(f"Student '{name}'successfully added!")
+        print(f"Student '{name}' successfully added!")
+
+
+# Function to remove a student
+def remove_student():
+    name = " ".join(input("Enter student name to remove: ").split())
+
+    if not name:
+        print("Please enter a student name to remove.")
+        return
+
+    name_key = name.casefold()
+
+    if name_key not in student_names:
+        print("Student not found!")
+        return
+
+    for student in students:
+        if student.casefold() == name_key:
+            students.remove(student)
+            student_names.remove(name_key)
+            print(f"Student '{student}' successfully removed!")
+            return
 
 
 
@@ -72,16 +94,17 @@ def display_students():
 
 
 
-#Implement Partial Student Name Search
+# Main menu function
 def main():
     while True:
         print("\n===== STUDENT RECORD MANAGER =====")
         print("1. Add Student")
         print("2. Search Student")
-        print("3. Display All Students")
-        print("4. Exit")
+        print("3. Remove Student")
+        print("4. Display All Students")
+        print("5. Exit")
 
-        choice = input("Enter your number choice (1-4): ")
+        choice = input("Enter your number choice (1-5): ")
 
         if choice == "1":
             add_student()
@@ -90,9 +113,12 @@ def main():
             search_student()
 
         elif choice == "3":
-            display_students()
+            remove_student()
 
         elif choice == "4":
+            display_students()
+
+        elif choice == "5":
             print("Thank you for using Student Record Manager!")
             break
 
@@ -102,4 +128,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

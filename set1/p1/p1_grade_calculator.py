@@ -98,3 +98,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+# A local variable is created inside a function and can only be used within that function.
+# In my program, grades is a local variable in main() that stores the grades entered by the user.
+# A global variable is declared outside functions and can be accessed by different functions in the program.
+# I used local variables to keep the student grades organized and avoid unnecessary changes.
+# Instead of using a global variable, I passed grades to other functions to calculate and display the results.

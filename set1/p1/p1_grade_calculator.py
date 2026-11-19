@@ -1,7 +1,7 @@
-#Name: Ma. Jamaica LJ J. Lago
-#Section: IV-BSIT A
-#Activity: P1 - Student Grade Calculator
-#Date: November 15, 2026
+# Name: Ma. Jamaica LJ J. Lago
+# Section: IV-BSIT A
+# Activity: P1 - Student Grade Calculator
+# Date: November 15, 2026
 
 
 def enter_grades():
@@ -63,6 +63,7 @@ def display_results(grades):
         return
 
     print("\n===== GRADE EVALUATION =====")
+    print("Student: Ma. Jamaica LJ J. Lago")
     print(f"Overall Grade: {calculate_average(grades):.2f}")
     print(f"Top Grade: {highest_grade(grades):.2f}")
     print(f"Lowest Grade: {lowest_grade(grades):.2f}")
@@ -91,15 +92,12 @@ def main():
             print("\nProgram closed.")
             break
 
-       
         else:
             print("\nInvalid option. Choose 1, 2, or 3.")
 
 
 if __name__ == "__main__":
     main()
-
-
 
 
 # A local variable is created inside a function and can only be used within that function.

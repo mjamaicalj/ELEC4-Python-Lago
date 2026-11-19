@@ -1,5 +1,7 @@
-
-# Activity P2 - Custom Module: student_utils
+# Name: Ma. Jamaica LJ J. Lago
+# Section: IV-BSIT A
+# Activity: P2 - Custom Module: student_utils
+# Date: November 19, 2026
 # Description: Reusable functions for student grades
 
 

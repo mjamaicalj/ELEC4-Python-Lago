@@ -1,6 +1,7 @@
-
+# Name: Ma. Jamaica LJ J. Lago
+# Section: IV-BSIT A
 # Activity: P3 - Student Record Manager
-# Commit 2: Add Students and Prevent Duplicates
+# Date: November 19, 2026
 
 # List for storing student names
 students = []
@@ -49,7 +50,6 @@ def remove_student():
             return
 
 
-
 # Function to search for a student
 def search_student():
     search = " ".join(input("Enter student name to search: ").split()).casefold()
@@ -65,6 +65,7 @@ def search_student():
             matches.append(name)
 
     print("\n===== SEARCH RESULTS =====")
+    print("Program by: Ma. Jamaica LJ J. Lago")
 
     if len(matches) == 0:
         print("No matching students found.")
@@ -75,7 +76,6 @@ def search_student():
             print(f"{number}. {name}")
 
     print(f"Total Matches: {len(matches)}")
-
 
 
 # Function to display all students
@@ -91,7 +91,6 @@ def display_students():
             print(f"{number}. {name}")
 
     print(f"Total Students: {len(students)}")
-
 
 
 # Main menu function
@@ -135,4 +134,3 @@ if __name__ == "__main__":
 # In this program, I used a list to store and display student names.
 # I used a set to prevent duplicate names regardless of capitalization.
 # Both collections help manage student records efficiently.
-

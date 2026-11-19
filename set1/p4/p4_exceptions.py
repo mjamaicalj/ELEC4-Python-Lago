@@ -1,11 +1,12 @@
-
-# Activity: P4 - Safe Menu Program
-# Student: Ma. Jamaica LJ J. Lago
+# Name: Ma. Jamaica LJ J. Lago
 # Section: IV-BSIT A
-# Date: November 16, 2026
+# Activity: P4 - Safe Menu Program
+# Date: November 19, 2026
+
 
 def show_menu():
     print("\n===== SAFE MENU PROGRAM =====")
+    print("Student: Ma. Jamaica LJ J. Lago")
     print("1. Divide Two Numbers")
     print("2. Open a File")
     print("3. Exit")
@@ -17,7 +18,6 @@ def divide_numbers():
     try:
         num1 = float(input("Enter first number: "))
         num2 = float(input("Enter second number: "))
-
         result = num1 / num2
 
     except ValueError:
@@ -44,13 +44,16 @@ def open_file():
     except FileNotFoundError:
         print("Error: The specified file was not found.")
 
+    except (OSError, ValueError):
+        print("Error: Unable to read the specified file.")
+
     else:
         print("\n===== FILE CONTENT =====")
         print(content)
         print("========================")
 
     finally:
-        print("File operation completed.")
+        print("File read attempt finished.")
 
 
 # Main function for the menu-driven program

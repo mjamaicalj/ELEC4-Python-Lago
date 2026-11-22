@@ -12,17 +12,24 @@ class Person:
     def introduce(self):
         return f"My name is {self.name}. I am {self.age} years old."
 
-
 class Student(Person):
     def __init__(self, name, age, course):
         super().__init__(name, age)
         self.course = course
+
+    # Add the student's course to the introduction from Person.
+    def introduce(self):
+        return f"{super().introduce()} I study {self.course}."
 
 
 class Teacher(Person):
     def __init__(self, name, age, subject):
         super().__init__(name, age)
         self.subject = subject
+
+    # Add the teacher's subject to the introduction from Person.
+    def introduce(self):
+        return f"{super().introduce()} I teach {self.subject}."
 
 
 if __name__ == "__main__":
@@ -34,8 +41,6 @@ if __name__ == "__main__":
 
     print("\nStudent")
     print(student.introduce())
-    print(f"Course: {student.course}")
 
     print("\nTeacher")
     print(teacher.introduce())
-    print(f"Subject: {teacher.subject}")

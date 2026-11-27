@@ -68,6 +68,80 @@ def display_students(students):
         print(" | ".join(record))
 
 
+def search_student(students):
+    student_id = input("\nEnter Student ID to search: ").strip().upper()
+
+    for record in students:
+        if record[0] == student_id:
+            print("\n===== STUDENT FOUND =====")
+            print("ID | Full name | Course/section | General average")
+            print(" | ".join(record))
+            return
+
+    print("\nStudent ID not found.")
+
+
+def update_student(students):
+    student_id = input("\nEnter Student ID to update: ").strip().upper()
+
+    for index, record in enumerate(students):
+        if record[0] == student_id:
+            print("\n===== CURRENT STUDENT INFORMATION =====")
+            print("ID | Full name | Course/section | General average")
+            print(" | ".join(record))
+
+            print("\n===== ENTER UPDATED INFORMATION =====")
+            full_name = input("New full name: ").strip()
+            course_section = input("New course/section: ").strip()
+
+            if not full_name or not course_section:
+                print("\nName and course/section cannot be empty.")
+                return
+
+            try:
+                average = float(input("New general average (0-100): "))
+            except ValueError:
+                print("\nInvalid input. Please enter a number.")
+                return
+
+            if not 0 <= average <= 100:
+                print("\nAverage must be between 0 and 100.")
+                return
+
+            updated_record = [
+                student_id,
+                full_name,
+                course_section,
+                f"{average:.2f}"
+            ]
+
+            updated_students = students.copy()
+            updated_students[index] = updated_record
+
+            # Save the updated records to a temporary file first.
+            temp_file = STUDENTS_FILE.with_suffix(".tmp")
+
+            try:
+                with open(temp_file, "w", encoding="utf-8", newline="") as file:
+                    csv.writer(file).writerows(updated_students)
+
+                temp_file.replace(STUDENTS_FILE)
+
+            except OSError as error:
+                print(f"\nError saving updated record: {error}")
+                return
+
+            students[index] = updated_record
+
+            print("\nStudent record updated successfully!")
+            print("\n===== UPDATED STUDENT INFORMATION =====")
+            print("ID | Full name | Course/section | General average")
+            print(" | ".join(updated_record))
+            return
+
+    print("\nStudent ID not found.")
+
+
 def main():
     print("\nP5 - Student Information File System")
     print("Prepared by: Ma. Jamaica LJ J. Lago")
@@ -81,9 +155,13 @@ def main():
     print(f"Records loaded: {len(students)}")
 
     while True:
-        print("\n1. Add student")
+        print("\n===== MAIN MENU =====")
+        print("1. Add student")
         print("2. Display all students")
-        print("3. Exit")
+        print("3. Search student by ID")
+        print("4. Update student")
+        print("5. Exit")
+
         choice = input("\nChoose an option: ").strip()
 
         if choice == "1":
@@ -91,9 +169,14 @@ def main():
         elif choice == "2":
             display_students(students)
         elif choice == "3":
+            search_student(students)
+        elif choice == "4":
+            update_student(students)
+        elif choice == "5":
+            print("\nExiting Student Information File System.")
             break
         else:
-            print("\nChoose 1, 2, or 3.")
+            print("\nInvalid choice. Please select 1 to 5.")
 
 
 if __name__ == "__main__":

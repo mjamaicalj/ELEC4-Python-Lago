@@ -52,6 +52,7 @@ class Section:
             student.display_info()
 
 
+
 if __name__ == "__main__":
     print("\nP7 - Student Management System")
     print("Prepared by: Ma. Jamaica LJ J. Lago")
@@ -59,6 +60,28 @@ if __name__ == "__main__":
     subject = Subject("ELEC 4", "Python Programming")
     section = Section("IV BSIT A", subject)
 
-    student = Student("S-001", "Ana Reyes", 91)
-    section.enroll_student(student)
+    # Create three student objects.
+    student1 = Student("S-001", "Ana Reyes", 91)
+    student2 = Student("S-002", "Leo Ramos", 87)
+    student3 = Student("S-003", "Mia Cruz", 93)
+
+    # Enroll students in the section.
+    section.enroll_student(student1)
+    section.enroll_student(student2)
+    section.enroll_student(student3)
+
+    print("\n===== ORIGINAL STUDENT RECORDS =====")
     section.display_students()
+
+    # Update one student's information.
+    student1.update_info("Ana Marie Reyes", 94)
+
+    print("\n===== UPDATED STUDENT RECORDS =====")
+    section.display_students()
+
+    # Check invalid grade validation.
+    print("\n===== INVALID GRADE TEST =====")
+    try:
+        student2.set_grade(105)
+    except ValueError as error:
+        print(f"Validation error: {error}")

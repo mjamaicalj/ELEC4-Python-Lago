@@ -142,3 +142,28 @@ Additional screenshots for each activity are located in that activity's screensh
 **4. Recursive Search**
 
 ![Search Output](set2/p6/screenshots/p6-search.png)
+
+
+
+
+### P7 - Student Management System with Classes
+
+**Description:** A Python program that demonstrates object-oriented programming using Student, Subject, and Section classes.
+
+**Features:**
+- Create and display three student objects
+- Organize students using Subject and Section classes
+- Update student information and grades
+- Use a private grade attribute with getter and setter methods
+- Validate grades from 0 to 100
+- Display student records before and after updating
+
+**How to Run:**
+
+`python set2/p7/p7_classes.py`
+
+**Activity Folder:** [P7 Student Management System](set2/p7/)
+
+### P7 Screenshot
+
+![P7 Student Records and Grade Validation](set2/p7/screenshots/p7-students.png)

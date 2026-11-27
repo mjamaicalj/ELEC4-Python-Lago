@@ -28,21 +28,37 @@ class Student:
         print(f"{self.student_id} | {self.full_name} | {self.get_grade():.2f}")
 
 
+class Subject:
+    def __init__(self, code, title):
+        self.code = code
+        self.title = title
+
+
+class Section:
+    def __init__(self, name, subject):
+        self.name = name
+        self.subject = subject
+        self.students = []
+
+    def enroll_student(self, student):
+        self.students.append(student)
+
+    def display_students(self):
+        print(f"\nSection: {self.name}")
+        print(f"Subject: {self.subject.code} - {self.subject.title}")
+        print("\nID | Full name | Grade")
+
+        for student in self.students:
+            student.display_info()
+
+
 if __name__ == "__main__":
     print("\nP7 - Student Management System")
     print("Prepared by: Ma. Jamaica LJ J. Lago")
 
+    subject = Subject("ELEC 4", "Python Programming")
+    section = Section("IV BSIT A", subject)
+
     student = Student("S-001", "Ana Reyes", 91)
-
-    print("\nOriginal record")
-    student.display_info()
-
-    student.update_info("Ana Marie Reyes", 94)
-    print("\nUpdated record")
-    student.display_info()
-
-    print("\nInvalid grade test")
-    try:
-        student.set_grade(105)
-    except ValueError as error:
-        print(error)
+    section.enroll_student(student)
+    section.display_students()

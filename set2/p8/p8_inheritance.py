@@ -36,8 +36,8 @@ if __name__ == "__main__":
     print("\nP8 - Inheritance and Polymorphism")
     print("Prepared by: Ma. Jamaica LJ J. Lago")
 
-    student = Student("Ana Reyes", 21, "BS Information Technology")
-    teacher = Teacher("Paolo Lim", 32, "Python Programming")
+    student = Student("Ma. Jamaica LJ Lago", 22, "BS Information Technology")
+    teacher = Teacher("Carl Patrick Ferre", 24, "Python Programming")
 
     print("\nStudent")
     print(student.introduce())

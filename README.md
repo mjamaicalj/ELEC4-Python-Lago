@@ -167,3 +167,29 @@ Additional screenshots for each activity are located in that activity's screensh
 ### P7 Screenshot
 
 ![P7 Student Records and Grade Validation](set2/p7/screenshots/p7-students.png)
+
+
+
+
+
+### P8 - Inheritance and Polymorphism
+
+**Description:** A Python program that demonstrates inheritance, method overriding, and polymorphism using a Person parent class and two child classes, Student and Teacher.
+
+**Features:**
+- Create a parent class named Person
+- Create Student and Teacher child classes
+- Reuse parent attributes using super().__init__()
+- Override introduce() in each child class
+- Demonstrate polymorphism using a shared list and loop
+- Display different introductions for Student and Teacher
+
+**How to Run:**
+
+`python set2/p8/p8_inheritance.py`
+
+**Activity Folder:** [P8 Inheritance and Polymorphism](set2/p8/)
+
+### P8 Screenshot
+
+![P8 Inheritance and Polymorphism Output](set2/p8/screenshots/p8-output.png)

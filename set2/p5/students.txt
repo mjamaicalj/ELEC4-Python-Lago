@@ -1,0 +1,5 @@
+12345,LJ Lago,IV BSIT A,99.00
+123,Jamaica Lago,BSCS-A,91.00
+456,Maria Lago,BSIT-D,81.00
+789,Sahara Lago,BSAB-A,79.00
+1011,Rosalyn Lago,BSHM-A,99.00

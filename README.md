@@ -105,3 +105,40 @@ Additional screenshots for each activity are located in that activity's screensh
 **4. Update Student Information**
 
 ![Update Student](set2/p5/screenshots/p5-update.png)
+
+
+
+
+### P6 - Recursion Toolkit
+
+**Description:** A menu-driven Python program that demonstrates four recursive functions using base cases and recursive calls.
+
+**Features:**
+- Calculate factorial of a number
+- Find the nth Fibonacci number and display the first n terms
+- Calculate the sum from 1 to n
+- Search for a target in a list recursively
+
+**How to Run:**
+
+`python set2/p6/p6_recursion.py`
+
+**Activity Folder:** [P6 Recursion Toolkit](set2/p6/)
+
+### P6 Screenshots
+
+**1. Factorial**
+
+![Factorial Output](set2/p6/screenshots/p6-factorial.png)
+
+**2. Fibonacci**
+
+![Fibonacci Output](set2/p6/screenshots/p6-fibonacci.png)
+
+**3. Summation**
+
+![Summation Output](set2/p6/screenshots/p6-sum.png)
+
+**4. Recursive Search**
+
+![Search Output](set2/p6/screenshots/p6-search.png)

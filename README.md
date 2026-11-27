@@ -64,3 +64,44 @@ python set1/p4/p4_exceptions.py
 ![P4 Division by Zero](set1/p4/screenshots/p4_divisionbyzero.png)
 
 Additional screenshots for each activity are located in that activity's screenshots folder.
+
+
+
+
+## Set 2 - Python Programming
+
+### P5 - Student Information File System
+
+**Description:** A menu-driven Python program that stores student information in a text file. It allows users to add, display, search, and update student records.
+
+**Features:**
+- Add new student records
+- Display all student records
+- Search students by ID
+- Update student information
+- Save and load records using students.txt
+- Handle invalid input and missing files
+
+**How to Run:**
+
+`python set2/p5/p5_file_system.py`
+
+**Activity Folder:** [P5 File System](set2/p5/)
+
+### P5 Screenshots
+
+**1. Saved Student Records**
+
+![Saved Records](set2/p5/screenshots/p5-saved.png)
+
+**2. Reopened Student Records**
+
+![Reopened Records](set2/p5/screenshots/p5-reopened.png)
+
+**3. Search Student by ID**
+
+![Search Student](set2/p5/screenshots/p5-search.png)
+
+**4. Update Student Information**
+
+![Update Student](set2/p5/screenshots/p5-update.png)
